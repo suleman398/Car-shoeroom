@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explode Car Showroom - premium, stylish and performance-driven vehicles. Drive your dream. Experience the difference.">
+  <title>Explode Car Showroom | Home</title>
+
+  <!-- Google Fonts (Barlow Condensed for headings, Barlow for text). If offline, fallback fonts are used. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Main stylesheet (shared by all pages) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= HEADER / NAVIGATION ================= -->
+  <header class="exp-header">
+    <div class="exp-container exp-header-inner">
+
+      <a href="index.html" class="exp-logo" aria-label="Explode Car Showroom home">
+        <span class="exp-logo-mark"></span>
+        EXPLODE <small>Car Showroom</small>
+      </a>
+
+      <!-- CSS-only mobile menu: the checkbox stores open/closed state -->
+      <input type="checkbox" id="exp-nav-toggle" class="exp-nav-toggle" aria-label="Toggle navigation menu">
+      <label for="exp-nav-toggle" class="exp-burger" aria-hidden="true"><span></span><span></span><span></span></label>
+
+      <nav class="exp-nav" aria-label="Main navigation">
+        <ul class="exp-nav-list">
+          <li><a href="index.html" class="exp-nav-link exp-active">Home</a></li>
+          <li><a href="about.html" class="exp-nav-link">About</a></li>
+          <li><a href="products.html" class="exp-nav-link">Products</a></li>
+          <li><a href="contact.html" class="exp-nav-link">Contact</a></li>
+          <li class="exp-nav-cta"><a href="products.html" class="exp-btn exp-btn-primary exp-btn-small">View Cars</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ================= HERO ================= -->
+    <section class="exp-hero">
+      <div class="exp-container">
+        <div class="exp-hero-content">
+          <h1 class="exp-hero-title">EXPLODE CAR SHOWROOM</h1>
+          <p class="exp-hero-sub">Drive Your Dream. Experience the Difference.</p>
+          <p class="exp-hero-text">Discover premium, stylish and performance-driven vehicles selected for drivers who expect more.</p>
+          <div class="exp-hero-buttons">
+            <a href="products.html" class="exp-btn exp-btn-primary">Explore Cars</a>
+            <a href="contact.html" class="exp-btn exp-btn-outline">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WHY CHOOSE US ================= -->
+    <section class="exp-section exp-section-light">
+      <div class="exp-container">
+        <div class="exp-heading">
+          <h2>Why Choose Us</h2>
+          <p>Every car on our floor is chosen, checked and priced with the buyer in mind.</p>
+        </div>
+        <div class="exp-grid-4">
+          <article class="exp-feature-card">
+            <div class="exp-feature-icon" aria-hidden="true">&#9733;</div>
+            <h3>Premium Cars</h3>
+            <p>Hand-picked vehicles from the world's leading brands, in excellent condition.</p>
+          </article>
+          <article class="exp-feature-card">
+            <div class="exp-feature-icon" aria-hidden="true">&#10004;</div>
+            <h3>Trusted Service</h3>
+            <p>Honest advice and clear paperwork from first visit to final handover.</p>
+          </article>
+          <article class="exp-feature-card">
+            <div class="exp-feature-icon" aria-hidden="true">$</div>
+            <h3>Competitive Prices</h3>
+            <p>Fair market pricing with flexible payment options and no hidden fees.</p>
+          </article>
+          <article class="exp-feature-card">
+            <div class="exp-feature-icon" aria-hidden="true">&#10084;</div>
+            <h3>Customer Satisfaction</h3>
+            <p>Our support continues long after you drive away in your new car.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FEATURED CARS ================= -->
+    <section class="exp-section">
+      <div class="exp-container">
+        <div class="exp-heading">
+          <h2>Featured Cars</h2>
+          <p>A selection of this month's most popular vehicles.</p>
+        </div>
+
+        <div class="exp-car-grid">
+
+          <!-- Car 1 -->
+          <article class="exp-car-card">
+            <div class="exp-car-photo exp-img-box">
+              <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&w=800&q=80" alt="Silver Toyota Camry sedan" loading="lazy">
+              <span class="exp-car-year">2024</span>
+            </div>
+            <div class="exp-car-body">
+              <span class="exp-car-brand">Toyota</span>
+              <h3 class="exp-car-model">Camry</h3>
+              <p class="exp-car-desc">A comfortable, efficient family sedan known for its reliability and smooth ride.</p>
+              <div class="exp-car-foot">
+                <p class="exp-car-price">$28,500</p>
+                <a href="products.html" class="exp-btn exp-btn-dark exp-btn-small">View Details</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Car 2 -->
+          <article class="exp-car-card">
+            <div class="exp-car-photo exp-img-box">
+              <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=800&q=80" alt="Honda Civic sedan on the road" loading="lazy">
+              <span class="exp-car-year">2024</span>
+            </div>
+            <div class="exp-car-body">
+              <span class="exp-car-brand">Honda</span>
+              <h3 class="exp-car-model">Civic</h3>
+              <p class="exp-car-desc">Sporty styling and a turbocharged engine in a practical, fuel-smart package.</p>
+              <div class="exp-car-foot">
+                <p class="exp-car-price">$26,900</p>
+                <a href="products.html" class="exp-btn exp-btn-dark exp-btn-small">View Details</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Car 3 -->
+          <article class="exp-car-card">
+            <div class="exp-car-photo exp-img-box">
+              <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80" alt="BMW 5 Series luxury sedan" loading="lazy">
+              <span class="exp-car-year">2024</span>
+            </div>
+            <div class="exp-car-body">
+              <span class="exp-car-brand">BMW</span>
+              <h3 class="exp-car-model">5 Series</h3>
+              <p class="exp-car-desc">Executive comfort with sharp handling and a technology-rich interior.</p>
+              <div class="exp-car-foot">
+                <p class="exp-car-price">$58,900</p>
+                <a href="products.html" class="exp-btn exp-btn-dark exp-btn-small">View Details</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Car 4 -->
+          <article class="exp-car-card">
+            <div class="exp-car-photo exp-img-box">
+              <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=800&q=80" alt="Mercedes-Benz C-Class" loading="lazy">
+              <span class="exp-car-year">2024</span>
+            </div>
+            <div class="exp-car-body">
+              <span class="exp-car-brand">Mercedes-Benz</span>
+              <h3 class="exp-car-model">C-Class</h3>
+              <p class="exp-car-desc">Refined design and a quiet, elegant cabin that makes every drive feel special.</p>
+              <div class="exp-car-foot">
+                <p class="exp-car-price">$49,900</p>
+                <a href="products.html" class="exp-btn exp-btn-dark exp-btn-small">View Details</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Car 5 -->
+          <article class="exp-car-card">
+            <div class="exp-car-photo exp-img-box">
+              <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=800&q=80" alt="Audi A6 executive car" loading="lazy">
+              <span class="exp-car-year">2023</span>
+            </div>
+            <div class="exp-car-body">
+              <span class="exp-car-brand">Audi</span>
+              <h3 class="exp-car-model">A6</h3>
+              <p class="exp-car-desc">Confident quattro performance wrapped in a clean, modern luxury design.</p>
+              <div class="exp-car-foot">
+                <p class="exp-car-price">$62,400</p>
+                <a href="products.html" class="exp-btn exp-btn-dark exp-btn-small">View Details</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Car 6 -->
+          <article class="exp-car-card">
+            <div class="exp-car-photo exp-img-box">
+              <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=800&q=80" alt="Porsche 911 sports car" loading="lazy">
+              <span class="exp-car-year">2024</span>
+            </div>
+            <div class="exp-car-body">
+              <span class="exp-car-brand">Porsche</span>
+              <h3 class="exp-car-model">911</h3>
+              <p class="exp-car-desc">The iconic sports car: razor-sharp response and unmistakable character.</p>
+              <div class="exp-car-foot">
+                <p class="exp-car-price">$114,400</p>
+                <a href="products.html" class="exp-btn exp-btn-dark exp-btn-small">View Details</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CAR CATEGORIES ================= -->
+    <section class="exp-section exp-section-light">
+      <div class="exp-container">
+        <div class="exp-heading">
+          <h2>Browse by Category</h2>
+          <p>Whatever your driving style, there is a car here for you.</p>
+        </div>
+        
+        <div class="exp-cat-grid">
+
+          <article class="exp-cat-card">
+            <img src="images.jfif" alt="" loading="lazy">
+            <h3>Luxury Cars</h3>
+            <a href="products.html" class="exp-btn exp-btn-primary exp-btn-small">Explore Category</a>
+          </article>
+
+          <article class="exp-cat-card">
+            <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=700&q=80" alt="" loading="lazy">
+            <h3>Sports Cars</h3>
+            <a href="products.html" class="exp-btn exp-btn-primary exp-btn-small">Explore Category</a>
+          </article>
+
+          <article class="exp-cat-card">
+            <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=700&q=80" alt="" loading="lazy">
+            <h3>SUVs</h3>
+            <a href="products.html" class="exp-btn exp-btn-primary exp-btn-small">Explore Category</a>
+          </article>
+
+          <article class="exp-cat-card">
+            <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=700&q=80" alt="" loading="lazy">
+            <h3>Sedans</h3>
+            <a href="products.html" class="exp-btn exp-btn-primary exp-btn-small">Explore Category</a>
+          </article>
+
+          <article class="exp-cat-card">
+            <img src="images.jfif" alt="" loading="lazy">
+            <h3>Fuel Efficient  Cars</h3>
+            <a href="products.html" class="exp-btn exp-btn-primary exp-btn-small">Explore Category</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT PREVIEW ================= -->
+    <section class="exp-section">
+      <div class="exp-container exp-split">
+        <div class="exp-split-img exp-img-box">
+          <img src="download (2).jfif" alt="Cars displayed inside the Explode showroom" loading="lazy">
+        </div>
+        <div class="exp-split-text">
+          <h2>About Explode Car Showroom</h2>
+          <p>For more than ten years, Explode Car Showroom has helped drivers find vehicles they are proud to own. We combine a carefully curated collection with straightforward pricing and a team that listens before it sells.</p>
+          <p>Every car is inspected, documented and presented honestly, so you can choose with confidence.</p>
+          <ul class="exp-check-list">
+            <li>Quality Vehicles</li>
+            <li>Professional Team</li>
+            <li>Customer First Approach</li>
+          </ul>
+          <a href="about.html" class="exp-btn exp-btn-dark">Learn More</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SERVICES ================= -->
+    <section class="exp-section exp-section-dark">
+      <div class="exp-container">
+        <div class="exp-heading">
+          <h2>Our Services</h2>
+          <p>Everything you need to buy, sell and maintain your car in one place.</p>
+        </div>
+        <div class="exp-grid-4">
+          <article class="exp-service-card">
+            <div class="exp-service-icon" aria-hidden="true">&#128663;</div>
+            <h3>Car Sales</h3>
+            <p>New and pre-owned vehicles with full history and transparent pricing.</p>
+          </article>
+          <article class="exp-service-card">
+            <div class="exp-service-icon" aria-hidden="true">&#128260;</div>
+            <h3>Car Trade-In</h3>
+            <p>Get a fair valuation for your current car and put it towards your next one.</p>
+          </article>
+          <article class="exp-service-card">
+            <div class="exp-service-icon" aria-hidden="true">&#128295;</div>
+            <h3>Vehicle Inspection</h3>
+            <p>A detailed multi-point check on every car before it reaches our showroom.</p>
+          </article>
+          <article class="exp-service-card">
+            <div class="exp-service-icon" aria-hidden="true">&#128172;</div>
+            <h3>Customer Support</h3>
+            <p>Friendly help with finance, insurance and after-sales questions.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TESTIMONIALS ================= -->
+    <section class="exp-section exp-section-light">
+      <div class="exp-container">
+        <div class="exp-heading">
+          <h2>What Our Customers Say</h2>
+          <p>Real words from drivers who found their car with us.</p>
+        </div>
+        <div class="exp-grid-3">
+
+          <article class="exp-quote-card">
+            <div class="exp-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>I never felt pressured. The team explained every option on the BMW and the price was exactly what we agreed on.</p>
+            <div class="exp-quote-person">
+              <span class="exp-avatar" aria-hidden="true">A</span>
+              <div><strong>Ahmed Raza</strong><span>BMW 5 Series owner</span></div>
+            </div>
+          </article>
+
+          <article class="exp-quote-card">
+            <div class="exp-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>They gave me a great trade-in value and handled all the paperwork. I drove home in my Audi the same day.</p>
+            <div class="exp-quote-person">
+              <span class="exp-avatar" aria-hidden="true">S</span>
+              <div><strong>Sara Khan</strong><span>Audi A6 owner</span></div>
+            </div>
+          </article>
+
+          <article class="exp-quote-card">
+            <div class="exp-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p>Buying my first Porsche was a big step. Their knowledge and after-sales support made it easy and enjoyable.</p>
+            <div class="exp-quote-person">
+              <span class="exp-avatar" aria-hidden="true">B</span>
+              <div><strong>Bilal Hussain</strong><span>Porsche 911 owner</span></div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CALL TO ACTION ================= -->
+    <section class="exp-cta">
+      <div class="exp-container">
+        <h2>Ready to Find Your Dream Car?</h2>
+        <p>Explore our collection and find the vehicle that matches your lifestyle.</p>
+        <a href="products.html" class="exp-btn exp-btn-primary">Explore Cars</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="exp-footer">
+    <div class="exp-container">
+      <div class="exp-footer-grid">
+
+        <div>
+          <h3>Explode Car Showroom</h3>
+          <p>Premium, stylish and performance-driven vehicles for drivers who expect more.</p>
+<div class="exp-social">
+    <a href="#" aria-label="Facebook">f</a>
+    <a href="#" aria-label="Instagram">ig</a>
+    <a href="#" aria-label="X (Twitter)">x</a>
+    <a href="#" aria-label="YouTube">yt</a>
+</div>
+        </div>
+
+
+
+        <div>
+          <h3>Quick Links</h3>
+          <ul class="exp-footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Contact Information</h3>
+          <ul class="exp-footer-contact">
+            <li>123 Premium Avenue, Auto District, Your City</li>
+            <li><a href="tel:+10000000000">+1 (000) 000-0000</a></li>
+            <li><a href="mailto:info@explodecarshowroom.com">info@explodecarshowroom.com</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Opening Hours</h3>
+          <ul class="exp-hours">
+            <li><span>Mon - Fri</span><span>9:00 - 19:00</span></li>
+            <li><span>Saturday</span><span>10:00 - 18:00</span></li>
+            <li><span>Sunday</span><span>Closed</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+    <div class="exp-copyright">
+      <div class="exp-container">&copy; 2026 Explode Car Showroom. All rights reserved.</div>
+    </div>
+  </footer>
+
+</body>
+</html>

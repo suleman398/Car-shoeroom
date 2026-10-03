@@ -1,0 +1,745 @@
+/* =====================================================
+   EXPLODE CAR SHOWROOM - MAIN STYLESHEET (style.css)
+   Linked from: index.html, about.html, products.html, contact.html
+   All class names start with "exp-" to avoid conflicts.
+
+   TABLE OF CONTENTS
+   01. Variables & Reset
+   02. Base Elements & Utilities
+   03. Buttons
+   04. Header & CSS-only Mobile Menu
+   05. Hero (Home)
+   06. Page Hero (About / Products / Contact)
+   07. Section Headings
+   08. Feature Cards
+   09. Car Cards
+   10. Category Cards
+   11. Split Layout (About preview / Story)
+   12. Service Cards
+   13. Testimonials
+   14. Call To Action
+   15. Stats & Values (About)
+   16. Gallery (About)
+   17. Products Page Filter
+   18. Contact Page (info, form, map, FAQ)
+   19. Footer
+   20. Animations
+   21. Responsive Breakpoints
+   ===================================================== */
+
+
+/* ---------- 01. VARIABLES & RESET ---------- */
+:root {
+  /* Colours - change these to re-theme the whole website */
+  --exp-ink: #0d1014;          /* main dark background */
+  --exp-graphite: #1a1f26;     /* cards on dark sections */
+  --exp-steel: #2a313b;        /* borders on dark sections */
+  --exp-bone: #f2f3f5;         /* light section background */
+  --exp-white: #ffffff;
+  --exp-text: #3a414b;         /* body text on light sections */
+  --exp-muted: #8b94a1;        /* secondary text */
+  --exp-brass: #c2a15f;        /* main accent (luxury) */
+  --exp-brass-dark: #a3843f;
+  --exp-ember: #e8502c;        /* used only for the logo mark */
+
+  /* Fonts */
+  --exp-font-head: "Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+  --exp-font-body: "Barlow", "Segoe UI", Arial, sans-serif;
+
+  /* Layout */
+  --exp-radius: 6px;
+  --exp-shadow: 0 10px 30px rgba(13, 16, 20, 0.12);
+  --exp-header-h: 76px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+
+/* ---------- 02. BASE ELEMENTS & UTILITIES ---------- */
+body {
+  font-family: var(--exp-font-body);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--exp-text);
+  background: var(--exp-white);
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+
+h1, h2, h3, h4 {
+  font-family: var(--exp-font-head);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--exp-ink);
+  letter-spacing: 0.01em;
+}
+
+/* Visible keyboard focus for accessibility */
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible, label:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--exp-brass);
+  outline-offset: 3px;
+}
+
+.exp-container { width: min(1180px, 92%); margin-inline: auto; }
+.exp-section { padding: 90px 0; }
+.exp-section-light { background: var(--exp-bone); }
+.exp-section-dark { background: var(--exp-ink); color: #c5cbd3; }
+.exp-section-dark h2, .exp-section-dark h3 { color: var(--exp-white); }
+
+/* Placeholder colour shows while images load (or if one fails) */
+.exp-img-box { background: var(--exp-steel); overflow: hidden; }
+
+
+/* ---------- 03. BUTTONS ---------- */
+.exp-btn {
+  display: inline-block;
+  padding: 13px 30px;
+  font-family: var(--exp-font-head);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border: 2px solid transparent;
+  border-radius: var(--exp-radius);
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, border-color 0.3s, transform 0.3s;
+}
+.exp-btn:hover { transform: translateY(-3px); }
+.exp-btn-primary { background: var(--exp-brass); color: var(--exp-ink); }
+.exp-btn-primary:hover { background: var(--exp-white); }
+.exp-btn-outline { border-color: var(--exp-white); color: var(--exp-white); }
+.exp-btn-outline:hover { background: var(--exp-white); color: var(--exp-ink); }
+.exp-btn-dark { background: var(--exp-ink); color: var(--exp-white); }
+.exp-btn-dark:hover { background: var(--exp-brass); color: var(--exp-ink); }
+.exp-btn-small { padding: 9px 18px; font-size: 1rem; }
+.exp-btn-line { border-color: var(--exp-ink); color: var(--exp-ink); }
+.exp-btn-line:hover { background: var(--exp-ink); color: var(--exp-white); }
+
+
+/* ---------- 04. HEADER & CSS-ONLY MOBILE MENU ---------- */
+/* The mobile menu uses a hidden checkbox + label ("checkbox hack"),
+   so no JavaScript is needed. */
+.exp-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: var(--exp-header-h);
+  background: rgba(13, 16, 20, 0.96);
+  border-bottom: 1px solid var(--exp-steel);
+}
+.exp-header-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.exp-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--exp-font-head);
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--exp-white);
+}
+.exp-logo-mark {
+  width: 14px;
+  height: 14px;
+  background: var(--exp-ember);
+  transform: rotate(45deg);       /* small diamond "spark" */
+  transition: transform 0.5s;
+}
+.exp-logo:hover .exp-logo-mark { transform: rotate(225deg) scale(1.2); }
+.exp-logo small {
+  font-weight: 400;
+  color: var(--exp-brass);
+  font-size: 1.1rem;
+}
+
+.exp-nav-toggle { display: none; }    /* hidden checkbox */
+.exp-burger { display: none; }        /* hamburger icon (mobile only) */
+
+.exp-nav-list { display: flex; align-items: center; gap: 34px; }
+.exp-nav-link {
+  position: relative;
+  color: #d7dce3;
+  font-weight: 500;
+  padding: 6px 0;
+  transition: color 0.3s;
+}
+.exp-nav-link::after {                /* animated underline */
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 0; height: 2px;
+  background: var(--exp-brass);
+  transition: width 0.3s;
+}
+.exp-nav-link:hover, .exp-nav-link.exp-active { color: var(--exp-white); }
+.exp-nav-link:hover::after, .exp-nav-link.exp-active::after { width: 100%; }
+
+
+/* ---------- 05. HERO (HOME) ---------- */
+.exp-hero {
+  position: relative;
+  min-height: calc(100vh - var(--exp-header-h));
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(100deg, rgba(13,16,20,0.92) 15%, rgba(13,16,20,0.35) 100%),
+    url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=80")
+    center / cover no-repeat;
+  background-color: var(--exp-ink);
+  color: var(--exp-white);
+}
+.exp-hero-content { max-width: 700px; padding: 60px 0; }
+.exp-hero-title {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 700;
+  color: var(--exp-white);
+  letter-spacing: 0.03em;
+  line-height: 1;
+  margin-bottom: 18px;
+}
+.exp-hero-sub {
+  font-family: var(--exp-font-head);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  color: var(--exp-brass);
+  margin-bottom: 18px;
+}
+.exp-hero-text { font-size: 1.15rem; max-width: 540px; color: #d2d7de; margin-bottom: 34px; }
+.exp-hero-buttons { display: flex; flex-wrap: wrap; gap: 16px; }
+
+
+/* ---------- 06. PAGE HERO (About / Products / Contact) ---------- */
+.exp-page-hero {
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: var(--exp-white);
+  background-color: var(--exp-ink);
+  background-size: cover;
+  background-position: center;
+}
+.exp-page-hero h1 { color: var(--exp-white); font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 12px; }
+.exp-page-hero p { font-family: var(--exp-font-head); font-size: clamp(1.2rem, 2.6vw, 1.7rem); color: var(--exp-brass); }
+
+.exp-hero-about {
+  background-image:
+    linear-gradient(rgba(13,16,20,0.72), rgba(13,16,20,0.82)),
+    url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1800&q=80");
+}
+.exp-hero-products {
+  background-image:
+    linear-gradient(rgba(13,16,20,0.72), rgba(13,16,20,0.82)),
+    url("https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=1800&q=80");
+}
+.exp-hero-contact {
+  background-image:
+    linear-gradient(rgba(13,16,20,0.72), rgba(13,16,20,0.82)),
+    url("https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1800&q=80");
+}
+
+
+/* ---------- 07. SECTION HEADINGS ---------- */
+.exp-heading { max-width: 640px; margin: 0 auto 56px; text-align: center; }
+.exp-heading h2 { font-size: clamp(2.1rem, 4.5vw, 3.2rem); margin-bottom: 12px; }
+.exp-heading p { color: var(--exp-muted); }
+.exp-section-dark .exp-heading p { color: #98a1ad; }
+
+
+/* ---------- 08. FEATURE CARDS (Why Choose Us / Why Explode / Values) ---------- */
+.exp-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.exp-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+.exp-feature-card {
+  padding: 36px 28px;
+  background: var(--exp-white);
+  border: 1px solid #e1e4e8;
+  border-top: 3px solid var(--exp-brass);
+  border-radius: var(--exp-radius);
+  transition: transform 0.35s, box-shadow 0.35s;
+}
+.exp-feature-card:hover { transform: translateY(-8px); box-shadow: var(--exp-shadow); }
+.exp-feature-icon {
+  width: 60px; height: 60px;
+  display: grid; place-items: center;
+  margin-bottom: 20px;
+  font-size: 1.7rem;
+  background: var(--exp-ink);
+  color: var(--exp-brass);
+  border-radius: 50%;
+  transition: transform 0.4s;
+}
+.exp-feature-card:hover .exp-feature-icon { transform: rotateY(360deg); }
+.exp-feature-card h3 { font-size: 1.6rem; margin-bottom: 8px; }
+.exp-feature-card p { font-size: 1rem; }
+
+
+/* ---------- 09. CAR CARDS ---------- */
+.exp-car-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.exp-car-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--exp-white);
+  border-radius: var(--exp-radius);
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(13,16,20,0.08);
+  transition: transform 0.35s, box-shadow 0.35s;
+}
+.exp-car-card:hover { transform: translateY(-8px); box-shadow: var(--exp-shadow); }
+.exp-car-photo { position: relative; aspect-ratio: 3 / 2; }
+.exp-car-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
+.exp-car-card:hover .exp-car-photo img { transform: scale(1.08); }
+.exp-car-year {
+  position: absolute; top: 14px; left: 14px;
+  padding: 3px 12px;
+  font-weight: 600; font-size: 0.9rem;
+  background: var(--exp-ink); color: var(--exp-brass);
+  border-radius: 40px;
+}
+.exp-car-body { display: flex; flex-direction: column; flex: 1; padding: 24px; }
+.exp-car-brand { font-weight: 600; font-size: 0.95rem; color: var(--exp-brass-dark); }
+.exp-car-model { font-size: 1.8rem; margin: 2px 0 8px; }
+.exp-car-desc { font-size: 0.98rem; margin-bottom: 16px; }
+.exp-car-specs {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 6px 14px;
+  margin-bottom: 18px; padding: 14px 0;
+  border-top: 1px solid #e3e6ea; border-bottom: 1px solid #e3e6ea;
+  font-size: 0.92rem;
+}
+.exp-car-specs dt { color: var(--exp-muted); }
+.exp-car-specs dd { color: var(--exp-ink); font-weight: 600; }
+.exp-car-foot { margin-top: auto; }
+.exp-car-price {
+  font-family: var(--exp-font-head);
+  font-size: 1.9rem; font-weight: 700;
+  color: var(--exp-ink);
+  margin-bottom: 14px;
+}
+.exp-car-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+
+
+/* ---------- 10. CATEGORY CARDS ---------- */
+.exp-cat-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; }
+.exp-cat-card {
+  position: relative;
+  min-height: 380px;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 28px;
+  overflow: hidden;
+  border-radius: var(--exp-radius);
+  background: var(--exp-ink);
+  color: var(--exp-white);
+}
+.exp-cat-card img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.7s;
+}
+.exp-cat-card::before {              /* dark gradient so text stays readable */
+  content: ""; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(to top, rgba(13,16,20,0.95) 10%, rgba(13,16,20,0.1) 70%);
+}
+.exp-cat-card:hover img { transform: scale(1.1); }
+.exp-cat-card h3, .exp-cat-card .exp-btn { position: relative; z-index: 2; }
+.exp-cat-card h3 { color: var(--exp-white); font-size: 2rem; margin-bottom: 14px; }
+.exp-cat-card .exp-btn { align-self: flex-start; }
+
+
+/* ---------- 11. SPLIT LAYOUT (About preview / Our Story) ---------- */
+.exp-split { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.exp-split-img { border-radius: var(--exp-radius); aspect-ratio: 4 / 3; box-shadow: var(--exp-shadow); }
+.exp-split-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s; }
+.exp-split-img:hover img { transform: scale(1.06); }
+.exp-split-text h2 { font-size: clamp(2.1rem, 4.5vw, 3.1rem); margin-bottom: 18px; }
+.exp-split-text p { margin-bottom: 16px; }
+.exp-check-list { margin: 22px 0 30px; display: grid; gap: 10px; }
+.exp-check-list li { position: relative; padding-left: 34px; font-weight: 500; color: var(--exp-ink); }
+.exp-check-list li::before {
+  content: "\2713";
+  position: absolute; left: 0; top: 1px;
+  width: 24px; height: 24px;
+  display: grid; place-items: center;
+  font-size: 0.85rem;
+  background: var(--exp-brass); color: var(--exp-ink);
+  border-radius: 50%;
+}
+.exp-split-reverse .exp-split-img { order: 2; }
+
+/* Mission / Vision panels */
+.exp-panel {
+  padding: 48px 40px;
+  border-radius: var(--exp-radius);
+  background: var(--exp-graphite);
+  border-left: 4px solid var(--exp-brass);
+}
+.exp-panel h2 { font-size: 2.4rem; margin-bottom: 14px; }
+.exp-panel-light { background: var(--exp-white); border-left-color: var(--exp-ink); box-shadow: var(--exp-shadow); }
+.exp-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+
+
+/* ---------- 12. SERVICE CARDS ---------- */
+.exp-service-card {
+  padding: 34px 26px;
+  background: var(--exp-graphite);
+  border: 1px solid var(--exp-steel);
+  border-radius: var(--exp-radius);
+  transition: transform 0.35s, border-color 0.35s;
+}
+.exp-service-card:hover { transform: translateY(-8px); border-color: var(--exp-brass); }
+.exp-service-icon { font-size: 2.2rem; margin-bottom: 14px; color: var(--exp-brass); }
+.exp-service-card h3 { font-size: 1.55rem; margin-bottom: 8px; }
+.exp-service-card p { font-size: 0.98rem; color: #a9b1bc; }
+
+
+/* ---------- 13. TESTIMONIALS ---------- */
+.exp-quote-card {
+  position: relative;
+  padding: 40px 30px 30px;
+  background: var(--exp-white);
+  border-radius: var(--exp-radius);
+  box-shadow: 0 4px 16px rgba(13,16,20,0.08);
+  transition: transform 0.35s, box-shadow 0.35s;
+}
+.exp-quote-card:hover { transform: translateY(-6px); box-shadow: var(--exp-shadow); }
+.exp-quote-card::before {
+  content: "\201C";
+  position: absolute; top: 4px; left: 22px;
+  font-family: Georgia, serif;
+  font-size: 5rem; line-height: 1;
+  color: var(--exp-brass);
+}
+.exp-stars { color: var(--exp-brass); letter-spacing: 3px; margin-bottom: 10px; }
+.exp-quote-card p { margin-bottom: 22px; font-style: italic; }
+.exp-quote-person { display: flex; align-items: center; gap: 14px; }
+.exp-avatar {
+  width: 48px; height: 48px;
+  display: grid; place-items: center;
+  font-family: var(--exp-font-head); font-size: 1.3rem; font-weight: 700;
+  background: var(--exp-ink); color: var(--exp-brass);
+  border-radius: 50%;
+}
+.exp-quote-person strong { display: block; color: var(--exp-ink); line-height: 1.2; }
+.exp-quote-person span { font-size: 0.9rem; color: var(--exp-muted); }
+
+
+/* ---------- 14. CALL TO ACTION ---------- */
+.exp-cta {
+  padding: 100px 0;
+  text-align: center;
+  color: #c5cbd3;
+  background:
+    linear-gradient(rgba(13,16,20,0.9), rgba(13,16,20,0.9)),
+    url("https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&w=1800&q=80")
+    center / cover fixed;
+  background-color: var(--exp-ink);
+}
+.exp-cta h2 { color: var(--exp-white); font-size: clamp(2.2rem, 5vw, 3.6rem); margin-bottom: 14px; }
+.exp-cta p { max-width: 520px; margin: 0 auto 30px; }
+
+
+/* ---------- 15. STATS & VALUES (About page) ---------- */
+.exp-stat-box {
+  padding: 40px 20px;
+  text-align: center;
+  background: var(--exp-graphite);
+  border: 1px solid var(--exp-steel);
+  border-bottom: 3px solid var(--exp-brass);
+  border-radius: var(--exp-radius);
+  transition: transform 0.35s;
+}
+.exp-stat-box:hover { transform: translateY(-6px); }
+.exp-stat-number {
+  display: block;
+  font-family: var(--exp-font-head);
+  font-size: clamp(3rem, 6vw, 4.2rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--exp-brass);
+  margin-bottom: 8px;
+}
+.exp-stat-label { color: #c5cbd3; font-weight: 500; }
+
+
+/* ---------- 16. GALLERY (About page) ---------- */
+/* Some images span 2 columns/rows for a "masonry" look */
+.exp-gallery { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 230px; gap: 14px; }
+.exp-gallery-item { position: relative; overflow: hidden; border-radius: var(--exp-radius); }
+.exp-gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s; }
+.exp-gallery-item:hover img { transform: scale(1.12); }
+.exp-gallery-item figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 30px 16px 12px;
+  color: var(--exp-white); font-weight: 500;
+  background: linear-gradient(to top, rgba(13,16,20,0.9), transparent);
+  transform: translateY(100%);
+  transition: transform 0.4s;
+}
+.exp-gallery-item:hover figcaption { transform: translateY(0); }
+.exp-gallery-wide { grid-column: span 2; }
+.exp-gallery-tall { grid-row: span 2; }
+
+
+/* ---------- 17. PRODUCTS PAGE FILTER (pure CSS) ---------- */
+/* Hidden radio buttons + labels act as category buttons.
+   When one radio is :checked, the cars in other categories are hidden
+   using the general sibling selector (~). No JavaScript needed. */
+.exp-filter-radio { position: absolute; opacity: 0; pointer-events: none; }
+.exp-filter-bar { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 48px; }
+.exp-filter-btn {
+  padding: 11px 28px;
+  font-family: var(--exp-font-head); font-size: 1.15rem; font-weight: 600; letter-spacing: 0.03em;
+  color: var(--exp-ink);
+  background: var(--exp-white);
+  border: 2px solid var(--exp-ink);
+  border-radius: 40px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+.exp-filter-btn:hover { transform: translateY(-3px); background: var(--exp-brass); border-color: var(--exp-brass); }
+
+/* Highlight the active button */
+#exp-f-all:checked ~ .exp-filter-bar label[for="exp-f-all"],
+#exp-f-luxury:checked ~ .exp-filter-bar label[for="exp-f-luxury"],
+#exp-f-suv:checked ~ .exp-filter-bar label[for="exp-f-suv"],
+#exp-f-sports:checked ~ .exp-filter-bar label[for="exp-f-sports"],
+#exp-f-sedan:checked ~ .exp-filter-bar label[for="exp-f-sedan"] {
+  background: var(--exp-ink); color: var(--exp-brass); border-color: var(--exp-ink);
+}
+/* Keyboard focus ring on the active label */
+.exp-filter-radio:focus-visible ~ .exp-filter-bar .exp-filter-btn { outline-offset: 3px; }
+
+/* Hide cars that do not match the selected category */
+#exp-f-luxury:checked ~ .exp-car-grid .exp-car-card:not(.exp-cat-luxury),
+#exp-f-suv:checked    ~ .exp-car-grid .exp-car-card:not(.exp-cat-suv),
+#exp-f-sports:checked ~ .exp-car-grid .exp-car-card:not(.exp-cat-sports),
+#exp-f-sedan:checked  ~ .exp-car-grid .exp-car-card:not(.exp-cat-sedan) { display: none; }
+
+.exp-note { text-align: center; margin-top: 40px; color: var(--exp-muted); font-size: 0.95rem; }
+
+
+/* ---------- 18. CONTACT PAGE ---------- */
+.exp-contact-layout { display: grid; grid-template-columns: 1fr 1.4fr; gap: 40px; align-items: start; }
+.exp-info-card {
+  padding: 40px 32px;
+  background: var(--exp-ink);
+  color: #c5cbd3;
+  border-radius: var(--exp-radius);
+}
+.exp-info-card h2 { color: var(--exp-white); font-size: 2.2rem; margin-bottom: 24px; }
+.exp-info-item { display: flex; gap: 16px; margin-bottom: 22px; }
+.exp-info-icon {
+  flex: 0 0 46px; height: 46px;
+  display: grid; place-items: center;
+  font-size: 1.2rem;
+  background: var(--exp-graphite); color: var(--exp-brass);
+  border-radius: 50%;
+}
+.exp-info-item strong { display: block; color: var(--exp-white); }
+
+.exp-form-card {
+  padding: 40px 36px;
+  background: var(--exp-white);
+  border-radius: var(--exp-radius);
+  box-shadow: var(--exp-shadow);
+}
+.exp-form-card h2 { font-size: 2.2rem; margin-bottom: 6px; }
+.exp-form-card > p { margin-bottom: 26px; color: var(--exp-muted); }
+.exp-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.exp-field { margin-bottom: 18px; }
+.exp-field label { display: block; margin-bottom: 6px; font-weight: 600; color: var(--exp-ink); font-size: 0.95rem; }
+.exp-field input, .exp-field select, .exp-field textarea {
+  width: 100%;
+  padding: 13px 14px;
+  font: inherit;
+  color: var(--exp-ink);
+  background: var(--exp-bone);
+  border: 2px solid transparent;
+  border-radius: var(--exp-radius);
+  transition: border-color 0.3s, background 0.3s;
+}
+.exp-field textarea { min-height: 150px; resize: vertical; }
+.exp-field input:focus, .exp-field select:focus, .exp-field textarea:focus {
+  outline: none; background: var(--exp-white); border-color: var(--exp-brass);
+}
+/* Red border only after the user typed something invalid */
+.exp-field input:not(:placeholder-shown):invalid { border-color: #c0392b; }
+
+.exp-map { margin-top: 40px; border-radius: var(--exp-radius); overflow: hidden; box-shadow: var(--exp-shadow); }
+.exp-map iframe { width: 100%; height: 380px; border: 0; display: block; }
+
+/* FAQ using <details> - opens and closes without JavaScript */
+.exp-faq { max-width: 820px; margin: 0 auto; display: grid; gap: 14px; }
+.exp-faq details { background: var(--exp-white); border-radius: var(--exp-radius); box-shadow: 0 2px 10px rgba(13,16,20,0.07); }
+.exp-faq summary {
+  position: relative;
+  padding: 20px 56px 20px 24px;
+  cursor: pointer; list-style: none;
+  font-family: var(--exp-font-head); font-size: 1.35rem; font-weight: 600; color: var(--exp-ink);
+}
+.exp-faq summary::-webkit-details-marker { display: none; }
+.exp-faq summary::after {
+  content: "+";
+  position: absolute; right: 24px; top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.8rem; color: var(--exp-brass-dark);
+  transition: transform 0.3s;
+}
+.exp-faq details[open] summary::after { content: "\2212"; }
+.exp-faq details p { padding: 0 24px 22px; }
+
+
+/* ---------- 19. FOOTER ---------- */
+.exp-footer { background: var(--exp-ink); color: #98a1ad; padding: 80px 0 0; border-top: 3px solid var(--exp-brass); }
+.exp-footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1.2fr 1.1fr; gap: 40px; padding-bottom: 56px; }
+.exp-footer h3 { color: var(--exp-white); font-size: 1.5rem; margin-bottom: 18px; }
+.exp-footer p { font-size: 0.98rem; margin-bottom: 14px; }
+.exp-footer-links li { margin-bottom: 10px; }
+.exp-footer-links a, .exp-footer-contact a { transition: color 0.3s, padding-left 0.3s; }
+.exp-footer-links a:hover { color: var(--exp-brass); padding-left: 6px; }
+.exp-footer-contact a:hover { color: var(--exp-brass); }
+.exp-footer-contact li, .exp-hours li { margin-bottom: 10px; font-size: 0.98rem; }
+.exp-hours li { display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px dashed var(--exp-steel); padding-bottom: 8px; }
+.exp-hours span:last-child { color: var(--exp-white); }
+.exp-social { display: flex; gap: 10px; margin-top: 18px; }
+.exp-social {
+    display: flex;
+    gap: 12px;
+}
+
+.exp-social a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+    transition: 0.3s ease;
+}
+
+/* Facebook */
+.exp-social a:nth-child(1) {
+    background: #1877F2;
+}
+
+/* Instagram */
+.exp-social a:nth-child(2) {
+    background: #E4405F;
+}
+
+/* X / Twitter */
+.exp-social a:nth-child(3) {
+    background: #000000;
+}
+
+/* YouTube */
+.exp-social a:nth-child(4) {
+    background: #FF0000;
+}
+
+/* Hover */
+.exp-social a:hover {
+    transform: translateY(-4px);
+    opacity: 0.85;
+}
+.exp-social a:hover { background: var(--exp-brass); color: var(--exp-ink); transform: translateY(-4px); }
+.exp-copyright { padding: 22px 0; text-align: center; font-size: 0.92rem; border-top: 1px solid var(--exp-steel); }
+
+
+/* ---------- 20. ANIMATIONS ---------- */
+/* One orchestrated entrance: the hero content slides in once on page load */
+@keyframes exp-rise {
+  from { opacity: 0; transform: translateY(36px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.exp-hero-content > *, .exp-page-hero .exp-container > * {
+  animation: exp-rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.exp-hero-content > :nth-child(2), .exp-page-hero .exp-container > :nth-child(2) { animation-delay: 0.15s; }
+.exp-hero-content > :nth-child(3) { animation-delay: 0.3s; }
+.exp-hero-content > :nth-child(4) { animation-delay: 0.45s; }
+
+/* Respect people who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0s !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* ---------- 21. RESPONSIVE BREAKPOINTS ---------- */
+
+/* Large tablets / small laptops */
+@media (max-width: 1024px) {
+  .exp-grid-4, .exp-cat-grid { grid-template-columns: repeat(2, 1fr); }
+  .exp-car-grid, .exp-grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .exp-footer-grid { grid-template-columns: 1fr 1fr; }
+  .exp-gallery { grid-template-columns: repeat(3, 1fr); }
+  .exp-contact-layout { grid-template-columns: 1fr; }
+  .exp-nav-list { gap: 22px; }
+}
+
+/* Tablets and phones: switch to the CSS-only hamburger menu */
+@media (max-width: 860px) {
+  .exp-burger {
+    display: flex; flex-direction: column; justify-content: center; gap: 6px;
+    width: 46px; height: 46px; padding: 11px;
+    cursor: pointer;
+  }
+  .exp-burger span { display: block; height: 3px; background: var(--exp-white); border-radius: 3px; transition: transform 0.3s, opacity 0.3s; }
+
+  /* Menu panel drops down under the header */
+  .exp-nav {
+    position: absolute;
+    top: var(--exp-header-h); left: 0; right: 0;
+    max-height: 0; overflow: hidden;
+    background: var(--exp-ink);
+    border-bottom: 1px solid var(--exp-steel);
+    transition: max-height 0.4s ease;
+  }
+  .exp-nav-list { flex-direction: column; align-items: stretch; gap: 0; padding: 8px 4% 24px; }
+  .exp-nav-list li { border-bottom: 1px solid var(--exp-steel); }
+  .exp-nav-link { display: block; padding: 16px 0; }
+  .exp-nav-link::after { display: none; }
+  .exp-nav-list .exp-nav-cta { border-bottom: 0; padding-top: 20px; }
+  .exp-nav-list .exp-nav-cta .exp-btn { display: block; text-align: center; }
+
+  /* Checked checkbox = open menu + hamburger turns into an X */
+  .exp-nav-toggle:checked ~ .exp-nav { max-height: 440px; }
+  .exp-nav-toggle:checked ~ .exp-burger span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+  .exp-nav-toggle:checked ~ .exp-burger span:nth-child(2) { opacity: 0; }
+  .exp-nav-toggle:checked ~ .exp-burger span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+  .exp-split { grid-template-columns: 1fr; gap: 36px; }
+  .exp-split-reverse .exp-split-img { order: 0; }
+  .exp-grid-2 { grid-template-columns: 1fr; }
+  .exp-section { padding: 70px 0; }
+}
+
+/* Phones */
+@media (max-width: 640px) {
+  .exp-grid-4, .exp-grid-3, .exp-cat-grid, .exp-car-grid { grid-template-columns: 1fr; }
+  .exp-gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 170px; }
+  .exp-gallery-wide { grid-column: span 2; }
+  .exp-footer-grid { grid-template-columns: 1fr; }
+  .exp-form-row { grid-template-columns: 1fr; gap: 0; }
+  .exp-form-card, .exp-info-card, .exp-panel { padding: 30px 22px; }
+  .exp-cat-card { min-height: 300px; }
+  .exp-hero-buttons .exp-btn { flex: 1 1 100%; text-align: center; }
+  .exp-cta { background-attachment: scroll; }   /* fixed backgrounds are janky on phones */
+  .exp-filter-btn { padding: 9px 20px; }
+}

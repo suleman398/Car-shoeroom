@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Explode Car Showroom - visit us, call us or send an enquiry.">
+  <title>Explode Car Showroom | Contact</title>
+
+  <!-- Google Fonts (Barlow Condensed for headings, Barlow for text). If offline, fallback fonts are used. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Main stylesheet (shared by all pages) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= HEADER / NAVIGATION ================= -->
+  <header class="exp-header">
+    <div class="exp-container exp-header-inner">
+
+      <a href="index.html" class="exp-logo" aria-label="Explode Car Showroom home">
+        <span class="exp-logo-mark"></span>
+        EXPLODE <small>Car Showroom</small>
+      </a>
+
+      <!-- CSS-only mobile menu: the checkbox stores open/closed state -->
+      <input type="checkbox" id="exp-nav-toggle" class="exp-nav-toggle" aria-label="Toggle navigation menu">
+      <label for="exp-nav-toggle" class="exp-burger" aria-hidden="true"><span></span><span></span><span></span></label>
+
+      <nav class="exp-nav" aria-label="Main navigation">
+        <ul class="exp-nav-list">
+          <li><a href="index.html" class="exp-nav-link">Home</a></li>
+          <li><a href="about.html" class="exp-nav-link">About</a></li>
+          <li><a href="products.html" class="exp-nav-link">Products</a></li>
+          <li><a href="contact.html" class="exp-nav-link exp-active">Contact</a></li>
+          <li class="exp-nav-cta"><a href="products.html" class="exp-btn exp-btn-primary exp-btn-small">View Cars</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ================= PAGE HERO ================= -->
+    <section class="exp-page-hero exp-hero-contact">
+      <div class="exp-container">
+        <h1>Contact Us</h1>
+        <p>Visit the Showroom or Send Us a Message</p>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT INFO + FORM ================= -->
+    <section class="exp-section exp-section-light">
+      <div class="exp-container">
+        <div class="exp-contact-layout">
+
+          <!-- Contact details -->
+          <aside class="exp-info-card">
+            <h2>Get in Touch</h2>
+            <div class="exp-info-item">
+              <span class="exp-info-icon" aria-hidden="true">&#9906;</span>
+              <div><strong>Showroom Address</strong>123 Premium Avenue, Auto District, Your City</div>
+            </div>
+            <div class="exp-info-item">
+              <span class="exp-info-icon" aria-hidden="true">&#9742;</span>
+              <div><strong>Phone</strong><a href="tel:+10000000000">+1 (000) 000-0000</a></div>
+            </div>
+            <div class="exp-info-item">
+              <span class="exp-info-icon" aria-hidden="true">&#9993;</span>
+              <div><strong>Email</strong><a href="mailto:info@explodecarshowroom.com">info@explodecarshowroom.com</a></div>
+            </div>
+            <div class="exp-info-item">
+              <span class="exp-info-icon" aria-hidden="true">&#9719;</span>
+              <div><strong>Opening Hours</strong>Mon - Fri: 9:00 - 19:00<br>Saturday: 10:00 - 18:00<br>Sunday: Closed</div>
+            </div>
+          </aside>
+
+          <!-- Enquiry form.
+               NOTE: without JavaScript or a server, this form cannot send emails by itself.
+               Replace the action URL with your form service (e.g. Formspree) or a mailto: link. -->
+          <div class="exp-form-card">
+            <h2>Send an Enquiry</h2>
+            <p>Fill in the form and we will reply within one working day.</p>
+            <form action="#" method="post">
+              <div class="exp-form-row">
+                <div class="exp-field">
+                  <label for="exp-name">Full name</label>
+                  <input type="text" id="exp-name" name="name" placeholder="Your name" required>
+                </div>
+                <div class="exp-field">
+                  <label for="exp-email">Email address</label>
+                  <input type="email" id="exp-email" name="email" placeholder="you@example.com" required>
+                </div>
+              </div>
+              <div class="exp-form-row">
+                <div class="exp-field">
+                  <label for="exp-phone">Phone number</label>
+                  <input type="tel" id="exp-phone" name="phone" placeholder="+1 000 000 0000">
+                </div>
+                <div class="exp-field">
+                  <label for="exp-interest">I am interested in</label>
+                  <select id="exp-interest" name="interest">
+                    <option>Buying a car</option>
+                    <option>Booking a test drive</option>
+                    <option>Trading in my car</option>
+                    <option>Vehicle inspection</option>
+                    <option>Something else</option>
+                  </select>
+                </div>
+              </div>
+              <div class="exp-field">
+                <label for="exp-message">Message</label>
+                <textarea id="exp-message" name="message" placeholder="Tell us which car you like or how we can help" required></textarea>
+              </div>
+              <button type="submit" class="exp-btn exp-btn-dark">Send Message</button>
+            </form>
+          </div>
+
+        </div>
+
+        <!-- Map (embedded iframe, no JavaScript on our side). Replace the src with your own Google Maps embed link. -->
+        <div class="exp-map">
+          <iframe title="Explode Car Showroom location map" loading="lazy"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.505853395423!2d67.0492892!3d24.880721299999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33ef1053ededb%3A0x520f00bbfa740a11!2sCAR%20WORLD!5e0!3m2!1sen!2s!4v1790866698651!5m2!1sen!2s"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section class="exp-section">
+      <div class="exp-container">
+        <div class="exp-heading">
+          <h2>Frequently Asked Questions</h2>
+          <p>Quick answers before you visit.</p>
+        </div>
+        <div class="exp-faq">
+          <details>
+            <summary>Can I book a test drive?</summary>
+            <p>Yes. Send us an enquiry or call the showroom and we will arrange a time that suits you.</p>
+          </details>
+          <details>
+            <summary>Do you accept trade-ins?</summary>
+            <p>We do. Bring your car to the showroom for a free valuation and we will deduct the value from your next purchase.</p>
+          </details>
+          <details>
+            <summary>Is finance available?</summary>
+            <p>Our team can explain flexible payment options and help you choose a plan that fits your budget.</p>
+          </details>
+          <details>
+            <summary>Are your cars inspected?</summary>
+            <p>Every vehicle goes through a multi-point inspection and comes with a full history before it is listed.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="exp-footer">
+    <div class="exp-container">
+      <div class="exp-footer-grid">
+
+        <div>
+          <h3>Explode Car Showroom</h3>
+          <p>Premium, stylish and performance-driven vehicles for drivers who expect more.</p>
+          <div class="exp-social">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Instagram">ig</a>
+            <a href="#" aria-label="X (Twitter)">x</a>
+            <a href="#" aria-label="YouTube">yt</a>
+          </div>
+        </div>
+
+        <div>
+          <h3>Quick Links</h3>
+          <ul class="exp-footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Contact Information</h3>
+          <ul class="exp-footer-contact">
+            <li>123 Premium Avenue, Auto District, Your City</li>
+            <li><a href="tel:+10000000000">+1 (000) 000-0000</a></li>
+            <li><a href="mailto:info@explodecarshowroom.com">info@explodecarshowroom.com</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Opening Hours</h3>
+          <ul class="exp-hours">
+            <li><span>Mon - Fri</span><span>9:00 - 19:00</span></li>
+            <li><span>Saturday</span><span>10:00 - 18:00</span></li>
+            <li><span>Sunday</span><span>Closed</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+    <div class="exp-copyright">
+      <div class="exp-container">&copy; 2026 Explode Car Showroom. All rights reserved.</div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse luxury cars, SUVs, sports cars and sedans at Explode Car Showroom.">
+  <title>Explode Car Showroom | Our Cars</title>
+
+  <!-- Google Fonts (Barlow Condensed for headings, Barlow for text). If offline, fallback fonts are used. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Main stylesheet (shared by all pages) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= HEADER / NAVIGATION ================= -->
+  <header class="exp-header">
+    <div class="exp-container exp-header-inner">
+
+      <a href="index.html" class="exp-logo" aria-label="Explode Car Showroom home">
+        <span class="exp-logo-mark"></span>
+        EXPLODE <small>Car Showroom</small>
+      </a>
+
+      <!-- CSS-only mobile menu: the checkbox stores open/closed state -->
+      <input type="checkbox" id="exp-nav-toggle" class="exp-nav-toggle" aria-label="Toggle navigation menu">
+      <label for="exp-nav-toggle" class="exp-burger" aria-hidden="true"><span></span><span></span><span></span></label>
+
+      <nav class="exp-nav" aria-label="Main navigation">
+        <ul class="exp-nav-list">
+          <li><a href="index.html" class="exp-nav-link">Home</a></li>
+          <li><a href="about.html" class="exp-nav-link">About</a></li>
+          <li><a href="products.html" class="exp-nav-link exp-active">Products</a></li>
+          <li><a href="contact.html" class="exp-nav-link">Contact</a></li>
+          <li class="exp-nav-cta"><a href="products.html" class="exp-btn exp-btn-primary exp-btn-small">View Cars</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ================= PAGE HERO ================= -->
+    <section class="exp-page-hero exp-hero-products">
+      <div class="exp-container">
+        <h1>Our Cars</h1>
+        <p>Explore Our Premium Vehicle Collection</p>
+      </div>
+    </section>
+
+    <!-- ================= CATEGORY FILTER + PRODUCT GRID =================
+         CSS-only filter: radio buttons sit BEFORE the filter bar and car grid,
+         so the CSS can show/hide cars depending on which radio is checked. -->
+    <section class="exp-section exp-section-light">
+      <div class="exp-container">
+
+        <input type="radio" name="exp-filter" id="exp-f-all" class="exp-filter-radio" checked>
+        <input type="radio" name="exp-filter" id="exp-f-luxury" class="exp-filter-radio">
+        <input type="radio" name="exp-filter" id="exp-f-suv" class="exp-filter-radio">
+        <input type="radio" name="exp-filter" id="exp-f-sports" class="exp-filter-radio">
+        <input type="radio" name="exp-filter" id="exp-f-sedan" class="exp-filter-radio">
+
+        <div class="exp-filter-bar" role="group" aria-label="Filter cars by category">
+          <label for="exp-f-all" class="exp-filter-btn">All Cars</label>
+          <label for="exp-f-luxury" class="exp-filter-btn">Luxury Cars</label>
+          <label for="exp-f-suv" class="exp-filter-btn">SUVs</label>
+          <label for="exp-f-sports" class="exp-filter-btn">Sports Cars</label>
+          <label for="exp-f-sedan" class="exp-filter-btn">Sedans</label>
+         <label for="exp-f-fuel effic" class="exp-filter-btn">Fuel Efficient </label>
+
+        </div>
+
+        <div class="exp-car-grid">
+
+        <article class="exp-car-card exp-cat-sedan">
+          <div class="exp-car-photo exp-img-box">
+            <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&w=800&q=80" alt="Toyota Camry sedan" loading="lazy">
+            <span class="exp-car-year">2024</span>
+          </div>
+          <div class="exp-car-body">
+            <span class="exp-car-brand">Toyota</span>
+            <h3 class="exp-car-model">Camry</h3>
+            <p class="exp-car-desc">Smooth, efficient and famously reliable family sedan.</p>
+            <dl class="exp-car-specs">
+              <dt>Engine</dt><dd>2.5L 4-Cylinder</dd>
+              <dt>Transmission</dt><dd>8-Speed Auto</dd>
+              <dt>Fuel Type</dt><dd>Hybrid</dd>
+              <dt>Year</dt><dd>2024</dd>
+            </dl>
+            <div class="exp-car-foot">
+              <p class="exp-car-price">$28,500</p>
+              <div class="exp-car-actions">
+                <a href="contact.html" class="exp-btn exp-btn-dark exp-btn-small">View Details</a>
+                <a href="contact.html" class="exp-btn exp-btn-line exp-btn-small">Contact Dealer</a>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="exp-car-card exp-cat-sedan">
+          <div class="exp-car-photo exp-img-box">
+            <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=800&q=80" alt="Honda Civic sedan" loading="lazy">
+            <span class="exp-car-year">2024</span>
+          </div>
+          <div class="exp-car-body">
+            <span class="exp-car-brand">Honda</span>
+            <h3 class="exp-car-model">Civic</h3>
+            <p class="exp-car-desc">Sporty looks and lively turbo power at a friendly price.</p>
+            <dl class="exp-car-specs">
+              <dt>Engine</dt><dd>1.5L Turbo</dd>
+              <dt>Transmission</dt><dd>CVT</dd>
+              <dt>Fuel Type</dt><dd>Petrol</dd>
+              <dt>Year</dt><dd>2024</dd>
+            </dl>
+            <div class="exp-car-foot">
+              <p class="exp-car-price">$26,900</p>
+              <div class="exp-car-actions">
+                <a href="contact.html" class="exp-btn exp-btn-dark exp-btn-small">View Details</a>
+                <a href="contact.html" class="exp-btn exp-btn-line exp-btn-small">Contact Dealer</a>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="exp-car-card exp-cat-luxury exp-cat-sedan">
+          <div class="exp-car-photo exp-img-box">
+            <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80" alt="BMW 5 Series" loading="lazy">
+            <span class="exp-car-year">2024</span>
+          </div>
+          <div class="exp-car-body">
+            <span class="exp-car-brand">BMW</span>
+            <h3 class="exp-car-model">5 Series</h3>
+            <p class="exp-car-desc">Executive comfort with the sharp handling BMW is known for.</p>
+            <dl class="exp-car-specs">
+              <dt>Engine</dt><dd>2.0L Turbo</dd>
+              <dt>Transmission</dt><dd>8-Speed Auto</dd>
+              <dt>Fuel Type</dt><dd>Petrol</dd>
+              <dt>Year</dt><dd>2024</dd>
+            </dl>
+            <div class="exp-car-foot">
+              <p class="exp-car-price">$58,900</p>
+              <div class="exp-car-actions">
+                <a href="contact.html" class="exp-btn exp-btn-dark exp-btn-small">View Details</a>
+                <a href="contact.html" class="exp-btn exp-btn-line exp-btn-small">Contact Dealer</a>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="exp-car-card exp-cat-luxury exp-cat-sedan">
+          <div class="exp-car-photo exp-img-box">
+            <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=800&q=80" alt="Mercedes-Benz C-Class" loading="lazy">
+            <span class="exp-car-year">2024</span>
+          </div>
+          <div class="exp-car-body">
+            <span class="exp-car-brand">Mercedes-Benz</span>
+            <h3 class="exp-car-model">C-Class</h3>
+            <p class="exp-car-desc">Elegant cabin and refined ride in a compact luxury package.</p>
+            <dl class="exp-car-specs">
+              <dt>Engine</dt><dd>2.0L Turbo Mild Hybrid</dd>
+              <dt>Transmission</dt><dd>9-Speed Auto</dd>
+              <dt>Fuel Type</dt><dd>Petrol Hybrid</dd>
+              <dt>Year</dt><dd>2024</dd>
+            </dl>
+            <div class="exp-car-foot">
+              <p class="exp-car-price">$49,900</p>
+              <div class="exp-car-actions">
+                <a href="contact.html" class="exp-btn exp-btn-dark exp-btn-small">View Details</a>
+                <a href="contact.html" class="exp-btn exp-btn-line exp-btn-small">Contact Dealer</a>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="exp-car-card exp-cat-luxury exp-cat-sedan">
+          <div class="exp-car-photo exp-img-box">
+            <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=800&q=80" alt="Audi A6" loading="lazy">
+            <span class="exp-car-year">2023</span>
+          </div>
+          <div class="exp-car-body">
+            <span class="exp-car-brand">Audi</span>
+            <h3 class="exp-car-model">A6</h3>
+            <p class="exp-car-desc">quattro all-wheel drive with a clean, modern interior.</p>
+            <dl class="exp-car-specs">
+              <dt>Engine</dt><dd>3.0L V6 TFSI</dd>
+              <dt>Transmission</dt><dd>7-Speed S tronic</dd>
+              <dt>Fuel Type</dt><dd>Petrol</dd>
+              <dt>Year</dt><dd>2023</dd>
+            </dl>
+            <div class="exp-car-foot">
+              <p class="exp-car-price">$62,400</p>
+              <div class="exp-car-actions">
+                <a href="contact.html" class="exp-btn exp-btn-dark exp-btn-small">View Details</a>
+                <a href="contact.html" class="exp-btn exp-btn-line exp-btn-small">Contact Dealer</a>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="exp-car-card exp-cat-sports exp-cat-luxury">
+          <div class="exp-car-photo exp-img-box">
+            <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=800&q=80" alt="Porsche 911 Carrera" loading="lazy">
+            <span class="exp-car-year">2024</span>
+          </div>
+          <div class="exp-car-body">
+            <span class="exp-car-brand">Porsche</span>
+            <h3 class="exp-car-model">911 Carrera</h3>
+            <p class="exp-car-desc">The benchmark sports car, equally thrilling on road or track.</p>
+            <dl class="exp-car-specs">
+              <dt>Engine</dt><dd>3.0L Twin-Turbo Flat-6</dd>
+              <dt>Transmission</dt><dd>8-Speed PDK</dd>
+              <dt>Fuel Type</dt><dd>Petrol</dd>
+              <dt>Year</dt><dd>2024</dd>
+            </dl>
+            <div class="exp-car-foot">
+              <p class="exp-car-price">$114,400</p>
+              <div class="exp-car-actions">
+                <a href="contact.html" class="exp-btn exp-btn-dark exp-btn-small">View Details</a>
+                <a href="contact.html" class="exp-btn exp-btn-line exp-btn-small">Contact Dealer</a>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="exp-car-card exp-cat-suv exp-cat-luxury">
+          <div class="exp-car-photo exp-img-box">
+            <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=800&q=80" alt="Range Rover Sport SUV" loading="lazy">
+            <span class="exp-car-year">2024</span>
+          </div>
+          <div class="exp-car-body">
+            <span class="exp-car-brand">Land Rover</span>
+            <h3 class="exp-car-model">Range Rover Sport</h3>
+            <p class="exp-car-desc">Commanding presence, plush interior and true off-road ability.</p>
+            <dl class="exp-car-specs">
+              <dt>Engine</dt><dd>3.0L Mild Hybrid I6</dd>
+              <dt>Transmission</dt><dd>8-Speed Auto</dd>
+              <dt>Fuel Type</dt><dd>Petrol Hybrid</dd>
+              <dt>Year</dt><dd>2024</dd>
+            </dl>
+            <div class="exp-car-foot">
+              <p class="exp-car-price">$88,500</p>
+              <div class="exp-car-actions">
+                <a href="contact.html" class="exp-btn exp-btn-dark exp-btn-small">View Details</a>
+                <a href="contact.html" class="exp-btn exp-btn-line exp-btn-small">Contact Dealer</a>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="exp-car-card exp-cat-suv exp-cat-luxury">
+          <div class="exp-car-photo exp-img-box">
+            <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=800&q=80" alt="BMW X5 SUV" loading="lazy">
+            <span class="exp-car-year">2024</span>
+          </div>
+          <div class="exp-car-body">
+            <span class="exp-car-brand">BMW</span>
+            <h3 class="exp-car-model">X5</h3>
+            <p class="exp-car-desc">Spacious, powerful family SUV that still drives like a BMW.</p>
+            <dl class="exp-car-specs">
+              <dt>Engine</dt><dd>3.0L Turbo I6</dd>
+              <dt>Transmission</dt><dd>8-Speed Auto</dd>
+              <dt>Fuel Type</dt><dd>Petrol</dd>
+              <dt>Year</dt><dd>2024</dd>
+            </dl>
+            <div class="exp-car-foot">
+              <p class="exp-car-price">$67,800</p>
+              <div class="exp-car-actions">
+                <a href="contact.html" class="exp-btn exp-btn-dark exp-btn-small">View Details</a>
+                <a href="contact.html" class="exp-btn exp-btn-line exp-btn-small">Contact Dealer</a>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="exp-car-card exp-cat-suv exp-cat-luxury">
+          <div class="exp-car-photo exp-img-box">
+            <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80" alt="Mercedes-Benz GLE SUV" loading="lazy">
+            <span class="exp-car-year">2024</span>
+          </div>
+          <div class="exp-car-body">
+            <span class="exp-car-brand">Mercedes-Benz</span>
+            <h3 class="exp-car-model">GLE</h3>
+            <p class="exp-car-desc">Premium comfort and advanced safety for the whole family.</p>
+            <dl class="exp-car-specs">
+              <dt>Engine</dt><dd>2.0L Turbo Diesel</dd>
+              <dt>Transmission</dt><dd>9-Speed Auto</dd>
+              <dt>Fuel Type</dt><dd>Diesel</dd>
+              <dt>Year</dt><dd>2024</dd>
+            </dl>
+            <div class="exp-car-foot">
+              <p class="exp-car-price">$72,300</p>
+              <div class="exp-car-actions">
+                <a href="contact.html" class="exp-btn exp-btn-dark exp-btn-small">View Details</a>
+                <a href="contact.html" class="exp-btn exp-btn-line exp-btn-small">Contact Dealer</a>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="exp-car-card exp-cat-sports">
+          <div class="exp-car-photo exp-img-box">
+            <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80" alt="Chevrolet Corvette Stingray" loading="lazy">
+            <span class="exp-car-year">2024</span>
+          </div>
+          <div class="exp-car-body">
+            <span class="exp-car-brand">Chevrolet</span>
+            <h3 class="exp-car-model">Corvette Stingray</h3>
+            <p class="exp-car-desc">Mid-engine V8 performance with exotic looks and daily usability.</p>
+            <dl class="exp-car-specs">
+              <dt>Engine</dt><dd>6.2L V8</dd>
+              <dt>Transmission</dt><dd>8-Speed Dual-Clutch</dd>
+              <dt>Fuel Type</dt><dd>Petrol</dd>
+              <dt>Year</dt><dd>2024</dd>
+            </dl>
+            <div class="exp-car-foot">
+              <p class="exp-car-price">$69,900</p>
+              <div class="exp-car-actions">
+                <a href="contact.html" class="exp-btn exp-btn-dark exp-btn-small">View Details</a>
+                <a href="contact.html" class="exp-btn exp-btn-line exp-btn-small">Contact Dealer</a>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="exp-car-card exp-cat-sports exp-cat-luxury">
+          <div class="exp-car-photo exp-img-box">
+            <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=800&q=80" alt="Lamborghini Huracan" loading="lazy">
+            <span class="exp-car-year">2023</span>
+          </div>
+          <div class="exp-car-body">
+            <span class="exp-car-brand">Lamborghini</span>
+            <h3 class="exp-car-model">Huracan</h3>
+            <p class="exp-car-desc">Naturally aspirated V10 drama in an unmistakable supercar.</p>
+            <dl class="exp-car-specs">
+              <dt>Engine</dt><dd>5.2L V10</dd>
+              <dt>Transmission</dt><dd>7-Speed Dual-Clutch</dd>
+              <dt>Fuel Type</dt><dd>Petrol</dd>
+              <dt>Year</dt><dd>2023</dd>
+            </dl>
+            <div class="exp-car-foot">
+              <p class="exp-car-price">$248,000</p>
+              <div class="exp-car-actions">
+                <a href="contact.html" class="exp-btn exp-btn-dark exp-btn-small">View Details</a>
+                <a href="contact.html" class="exp-btn exp-btn-line exp-btn-small">Contact Dealer</a>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="exp-car-card exp-cat-luxury exp-cat-sedan">
+          <div class="exp-car-photo exp-img-box">
+            <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=800&q=80" alt="Tesla Model S" loading="lazy">
+            <span class="exp-car-year">2024</span>
+          </div>
+          <div class="exp-car-body">
+            <span class="exp-car-brand">Tesla</span>
+            <h3 class="exp-car-model">Model S</h3>
+            <p class="exp-car-desc">Silent, rapid electric luxury with a long driving range.</p>
+            <dl class="exp-car-specs">
+              <dt>Engine</dt><dd>Dual Electric Motors</dd>
+              <dt>Transmission</dt><dd>Single-Speed</dd>
+              <dt>Fuel Type</dt><dd>Electric</dd>
+              <dt>Year</dt><dd>2024</dd>
+            </dl>
+            <div class="exp-car-foot">
+              <p class="exp-car-price">$79,900</p>
+              <div class="exp-car-actions">
+                <a href="contact.html" class="exp-btn exp-btn-dark exp-btn-small">View Details</a>
+                <a href="contact.html" class="exp-btn exp-btn-line exp-btn-small">Contact Dealer</a>
+              </div>
+            </div>
+          </div>
+        </article>
+        </div>
+
+        <p class="exp-note">Prices and availability are examples and may change. Contact us to confirm current stock.</p>
+      </div>
+    </section>
+
+    <!-- ================= CALL TO ACTION ================= -->
+    <section class="exp-cta">
+      <div class="exp-container">
+        <h2>Can't Find the Car You Want?</h2>
+        <p>Tell us what you are looking for and our team will search for it on your behalf.</p>
+        <a href="contact.html" class="exp-btn exp-btn-primary">Contact Us</a>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="exp-footer">
+    <div class="exp-container">
+      <div class="exp-footer-grid">
+
+        <div>
+          <h3>Explode Car Showroom</h3>
+          <p>Premium, stylish and performance-driven vehicles for drivers who expect more.</p>
+          <div class="exp-social">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Instagram">ig</a>
+            <a href="#" aria-label="X (Twitter)">x</a>
+            <a href="#" aria-label="YouTube">yt</a>
+          </div>
+        </div>
+
+        <div>
+          <h3>Quick Links</h3>
+          <ul class="exp-footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Contact Information</h3>
+          <ul class="exp-footer-contact">
+            <li>123 Premium Avenue, Auto District, Your City</li>
+            <li><a href="tel:+10000000000">+1 (000) 000-0000</a></li>
+            <li><a href="mailto:info@explodecarshowroom.com">info@explodecarshowroom.com</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Opening Hours</h3>
+          <ul class="exp-hours">
+            <li><span>Mon - Fri</span><span>9:00 - 19:00</span></li>
+            <li><span>Saturday</span><span>10:00 - 18:00</span></li>
+            <li><span>Sunday</span><span>Closed</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+    <div class="exp-copyright">
+      <div class="exp-container">&copy; 2026 Explode Car Showroom. All rights reserved.</div>
+    </div>
+  </footer>
+
+</body>
+</html>
